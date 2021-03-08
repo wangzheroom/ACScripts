@@ -1,1 +1,1 @@
-# ACScripts
+# JavaScript
