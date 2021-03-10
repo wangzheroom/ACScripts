@@ -13,14 +13,14 @@ jobs:
       
       - name: Checkout
         run: |
-          git clone https://github.com/chennfen/sqxs.git ~/sqxs
+          git clone https://github.com/wangzheroom/ACScripts.git ~/ACScripts
       - name: Use Node.js 14.x
         uses: actions/setup-node@v1
         with:
           node-version: 14.x          
       - name: npm install
         run: |
-          cd ~/sqxs/Task        
+          cd ~/ACScripts/Task        
           npm install
           npm install cron
           npm install request
@@ -28,7 +28,7 @@ jobs:
           
       - name: '【书旗小说】'
         run: |  
-          cd ~/sqxs/Task
+          cd ~/ACScripts/Task
           node sqxs.js      
         env:
           ENCRYPT_KEY: ${{ secrets.ENCRYPT_KEY }}
