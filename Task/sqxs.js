@@ -1,7 +1,7 @@
 /*
 
 脚本名称："书旗小说多账户号稳定版";
-适用版本：verson 4.3.6 ; 适用版本：verson 4.3.6 ; 适用版本：verson 4.3.6 ;（重要事情说三遍）
+适用版本：verson 4.3.2 ; 适用版本：verson 4.3.2 ; 适用版本：verson 4.3.2 ;（重要事情说三遍）
 作者：caixukun;
 
 
@@ -301,7 +301,7 @@ function vediodrawprize(k) {
                 if (error) {
                     $.log("视频抽奖请求失败,再次尝试视频抽奖");
                     await $.wait(5000);
-                    await vediodrawprize();
+                    await vediogoldprize();
                 } else {
                     const result = JSON.parse(data)
                         //$.log(data);
@@ -347,11 +347,10 @@ function draw(k) {
                     const result = JSON.parse(data)
                         //$.log(data);
                         if (result.status == 200) {
-                            k++;
                             $.log("【抽奖任务】抽奖成功，获得" + result.data.prizeList[0].prizeName);
                             drawgold += parseInt(result.data.prizeList[0].prizeName);
                             await $.wait(5000);
-                            await draw(k);
+                            await vediodrawprize(k);
                         } else {
                             $.log("【抽奖任务】抽奖失败," + result.message);
                             //$.log(data);
