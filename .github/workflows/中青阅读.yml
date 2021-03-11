@@ -11,18 +11,18 @@ jobs:
     steps:
       - name: Checkout
         run: |
-          git clone https://github.com/wangzheroom/ACScript.git ~/ACScript
+          git clone https://github.com/wangzheroom/ACScripts.git ~/ACScripts
       - name: Use Node.js 14.x
         uses: actions/setup-node@v1
         with:
           node-version: 14.x
       - name: npm install
         run: |
-          cd ~/ACScript
+          cd ~/ACScripts
           npm install
           npm install cron
           npm install request
       - name: '运行 【中青阅读1】'
         run: |
-          cd ~/ACScript  
+          cd ~/ACScripts  
           node Task/Youth_AutoRead1.js
